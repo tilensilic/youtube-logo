@@ -37,9 +37,7 @@ body {
     justify-content: center;
 }
 
-img,
-svg,
-canvas {
+img,svg,canvas {
     max-width: 300px;
     max-height: 300px;
     display: none;
