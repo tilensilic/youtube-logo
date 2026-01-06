@@ -3,11 +3,11 @@ body {
     padding: 20px;
 }
 
-.controls {
+.buttons {
     margin-bottom: 15px;
 }
 
-.controls button {
+.buttons button {
     padding: 4px 8px;
     margin-right: 5px;
     border: 1px solid black;
@@ -16,15 +16,15 @@ body {
     cursor: pointer;
 }
 
-.controls button:hover {
+.buttons button:hover {
     background-color: #ddd;
 }
 
-.controls button:active {
+.buttons button:active {
     background-color: #ccc;
 }
 
-.colors {
+.buttons {
     margin-top: 10px;
 }
 
@@ -42,3 +42,4 @@ img,svg,canvas {
     max-height: 300px;
     display: none;
 }
+
