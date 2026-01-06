@@ -2,11 +2,6 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
 }
-#glavno{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .buttons {
     margin-bottom: 15px;
