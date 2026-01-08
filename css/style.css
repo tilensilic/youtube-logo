@@ -1,14 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    height: 100vh;
-    margin: 0;
+    font-family:Arial, sans-serif;
+    padding:20px;
 }
 #glavno{
- 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 .buttons {
     margin-bottom: 15px;
@@ -44,6 +42,7 @@ img,svg,canvas {
     max-height: 300px;
     display: none;
 }
+
 
 
 
