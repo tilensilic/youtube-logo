@@ -4,8 +4,8 @@
 	<title>Youtube logo</title>
 	<meta charset="UTF-8" />
 
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />		
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>		
 </head>
 <body>
 
@@ -33,7 +33,6 @@
     </svg>
     <canvas id="logoCanvas" width="300" height="300"></canvas>
 </div>
-
 <script>
 const png = document.getElementById("pngLogo");
 const svg = document.getElementById("svgLogo");
@@ -45,24 +44,20 @@ function hideAll() {
     svg.style.display = "none";
     canvas.style.display = "none";
 }
-
 function showPNG() {
     hideAll();
     png.style.display = "block";
 }
-
 function showSVG() {
     hideAll();
     svg.style.display = "block";
     updateColors();
 }
-
 function showCanvas() {
     hideAll();
     canvas.style.display = "block";
     drawCanvas();
 }
-
 function updateColors() {
     const red = document.getElementById("redColor").value;
     const white = document.getElementById("whiteColor").value;
@@ -76,7 +71,6 @@ function updateColors() {
         drawCanvas();
     }
 }
-
 function drawCanvas() {
     const red = document.getElementById("redColor").value;
     const white = document.getElementById("whiteColor").value;
@@ -99,13 +93,10 @@ function drawCanvas() {
     ctx.closePath();
     ctx.fill();
 }
-
 showPNG();
 </script>
-
 </body>
 </html>
-
 
 
 
