@@ -15,9 +15,9 @@
     <button onclick="showCanvas()">Canvas</button>
 
     <div class="colors">
-        Zunanjost:<input type="color" id="redColor" value="#ff0000" onchange="updateColors()">
-        Notranjost:<input type="color" id="whiteColor" value="#ffffff" onchange="updateColors()">
-        Ozadje:<input type="color" id="bgColor" value="#ffffff" onchange="updateColors()">
+        Zunanjost:<input type="color" id="zunanjost" value="#ff0000" onchange="updateColors()">
+        Notranjost:<input type="color" id="notranjost" value="#ffffff" onchange="updateColors()">
+        Ozadje:<input type="color" id="ozadje" value="#ffffff" onchange="updateColors()">
     </div>
 </div>
 	
@@ -61,9 +61,9 @@ function showCanvas() {
     drawCanvas();
 }
 function updateColors() {
-    const red = document.getElementById("redColor").value;
-    const white = document.getElementById("whiteColor").value;
-    const bg = document.getElementById("bgColor").value;
+    const red = document.getElementById("zunanjost").value;
+    const white = document.getElementById("notranjost").value;
+    const bg = document.getElementById("ozadje").value;
 
     document.getElementById("display").style.background = bg;
     document.getElementById("ytRed").setAttribute("fill", red);
@@ -74,9 +74,9 @@ function updateColors() {
     }
 }
 function drawCanvas() {
-    const red = document.getElementById("redColor").value;
-    const white = document.getElementById("whiteColor").value;
-    const bg = document.getElementById("bgColor").value;
+    const red = document.getElementById("zunanjost").value;
+    const white = document.getElementById("notranjost").value;
+    const bg = document.getElementById("ozadje").value;
 
     ctx.clearRect(0, 0, 300, 300);
     ctx.fillStyle = bg;
@@ -99,6 +99,7 @@ showPNG();
 </script>
 </body>
 </html>
+
 
 
 
