@@ -4,9 +4,6 @@ body {
     font-family: Arial, sans-serif;
 }
 #glavno {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
 }
 .buttons {
     margin-bottom: 15px;
@@ -42,6 +39,7 @@ img,svg,canvas {
     max-height: 300px;
     display: none;
 }
+
 
 
 
