@@ -36,58 +36,58 @@
 </div>
 	
 <script>
-const png = document.getElementById("pngLogo");
-const svg = document.getElementById("svgLogo");
-const canvas = document.getElementById("logoCanvas");
-const ctx = canvas.getContext("2d");
+const png=document.getElementById("pngLogo");
+const svg=document.getElementById("svgLogo");
+const canvas=document.getElementById("logoCanvas");
+const ctx=canvas.getContext("2d");
 
 function hideAll() {
-    png.style.display = "none";
-    svg.style.display = "none";
-    canvas.style.display = "none";
+    png.style.display="none";
+    svg.style.display="none";
+    canvas.style.display="none";
 }
 function showPNG() {
     hideAll();
-    png.style.display = "block";
+    png.style.display="block";
 }
 function showSVG() {
     hideAll();
-    svg.style.display = "block";
+    svg.style.display="block";
     updateColors();
 }
 function showCanvas() {
     hideAll();
-    canvas.style.display = "block";
+    canvas.style.display="block";
     drawCanvas();
 }
 function updateColors() {
-    const red = document.getElementById("zunanjost").value;
-    const white = document.getElementById("notranjost").value;
-    const bg = document.getElementById("ozadje").value;
+    const red=document.getElementById("zunanjost").value;
+    const white=document.getElementById("notranjost").value;
+    const bg=document.getElementById("ozadje").value;
 
     document.getElementById("display").style.background = bg;
     document.getElementById("ytRed").setAttribute("fill", red);
     document.getElementById("ytWhite").setAttribute("fill", white);
 
-    if (canvas.style.display === "block") {
+    if (canvas.style.display==="block") {
         drawCanvas();
     }
 }
 function drawCanvas() {
-    const red = document.getElementById("zunanjost").value;
-    const white = document.getElementById("notranjost").value;
-    const bg = document.getElementById("ozadje").value;
+    const red=document.getElementById("zunanjost").value;
+    const white=document.getElementById("notranjost").value;
+    const bg=document.getElementById("ozadje").value;
 
     ctx.clearRect(0, 0, 300, 300);
-    ctx.fillStyle = bg;
+    ctx.fillStyle=bg;
     ctx.fillRect(0, 0, 300, 300);
 
-    ctx.fillStyle = red;
+    ctx.fillStyle=red;
     ctx.beginPath();
     ctx.roundRect(40, 80, 220, 140, 30);
     ctx.fill();
 
-    ctx.fillStyle = white;
+    ctx.fillStyle=white;
     ctx.beginPath();
     ctx.moveTo(130, 110);
     ctx.lineTo(130, 190);
@@ -99,6 +99,7 @@ showPNG();
 </script>
 </body>
 </html>
+
 
 
 
