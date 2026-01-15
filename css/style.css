@@ -1,66 +1,67 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
-#glavno {
-    text-align: center;
+#glavno{
+    text-align:center;
 }
 
-.buttons {
-    margin-bottom: 20px;
+.buttons{
+    margin-bottom:20px;
 }
 
-.buttons button {
-    padding: 6px 14px;
-    margin-right: 6px;
-    border: none;
-    background-color: #e0e0e0;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: 0.2s;
+.buttons button{
+    padding:6px 14px;
+    margin-right:6px;
+    border:none;
+    background-color:#e0e0e0;
+    font-size:15px;
+    cursor:pointer;
+    border-radius:6px;
+    transition:0.2s;
 }
 
-.buttons button:hover {
-    background-color: #d5d5d5;
+.buttons button:hover{
+    background-color:#d5d5d5;
 }
 
-.buttons button:active {
-    background-color: #c9c9c9;
+.buttons button:active{
+    background-color:#c9c9c9;
 }
 
-.colors {
-    margin-top: 10px;
-    font-size: 14px;
+.colors{
+    margin-top:10px;
+    font-size:14px;
 }
 
-.colors input {
-    margin-left: 6px;
-    margin-right: 12px;
+.colors input{
+    margin-left:6px;
+    margin-right:12px;
 }
 
-#display {
-    width: 340px;
-    height: 340px;
-    border: 2px solid #000;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+#display{
+    width:340px;
+    height:340px;
+    border:2px solid #000;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
 }
 
-img, svg, canvas {
-    max-width: 300px;
-    max-height: 300px;
-    display: none;
+img,svg,canvas{
+    max-width:300px;
+    max-height:300px;
+    display:none;
 }
+
