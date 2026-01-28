@@ -1,113 +1,87 @@
 <!DOCTYPE html>
 <html lang="sl">
-<head>		
-	<title>Youtube logo</title>
-	<meta charset="UTF-8" />
-
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>		
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div id="glavno">	
-	<div class="buttons">
-    	<button onclick="showPNG()">PNG</button>
-    	<button onclick="showSVG()">SVG</button>
-    	<button onclick="showCanvas()">Canvas</button>
-
-    	<div class="colors">
-        	Zunanjost:
-			<input type="color" id="zunanjost" value="#ff0000" onchange="updateColors()">
-			Notranjost:
-			<input type="color" id="notranjost" value="#ffffff" onchange="updateColors()">
-        	Ozadje:
-			<input type="color" id="ozadje" value="#ffffff" onchange="updateColors()">
-    	</div>
-	</div>
-	
-	<div id="display">
-    	<img id="pngLogo" src="slike/youtube.png" alt="YouTube PNG">
-    	<svg id="svgLogo" viewBox="0 0 24 24" width="300" height="300">
-        	<path id="ytRed"
-              	d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8z"
-              	fill="#ff0000"/>
-			<path id="ytWhite"
-              	d="M9.5 15.6V8.4l5.7 3.6-5.7 3.6z"
-              	fill="#ffffff"/>
-    	</svg>
-    	<canvas id="logoCanvas" width="300" height="300"></canvas>
-	</div>
+<div class="wrapper">
+    <div class="card">
+        <div class="logos">
+            <img src="slike/youtube.png" class="logo">
+            <svg id="svgLogo" viewBox="0 0 24 24" class="logo clickable">
+                <path id="ytRed"
+                    d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2A31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8z"
+                    fill="#ff0000"/>
+                <path id="ytWhite"
+                    d="M9.5 15.6V8.4l5.7 3.6-5.7 3.6z"
+                    fill="#ffffff"/>
+            </svg>
+            <canvas id="logoCanvas" width="120" height="90" class="logo clickable"></canvas>
+        </div>
+        <h2>YouTube prijava</h2>
+        <form>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Geslo" required>
+            <button type="submit">Prijava</button>
+        </form>
+        <button class="vizitkaBtn" onclick="openVizitka()">Vizitka</button>
+    </div>
 </div>
+<div id="vizitka" class="modal">
+    <div class="modalBox">
+        <h3>Tilen Silič</h3>
+        <p>Razred: 4.Ra</p>
+        <button onclick="closeVizitka()">Zapri</button>
+    </div>
+</div>
+<input type="color" id="svgColor" hidden>
+<input type="color" id="zunanjost" hidden value="#ff0000" onchange="drawCanvas()">
+<input type="color" id="notranjost" hidden value="#ffffff" onchange="drawCanvas()">
+
 <script>
-const png=document.getElementById("pngLogo");
-const svg=document.getElementById("svgLogo");
-const canvas=document.getElementById("logoCanvas");
-const ctx=canvas.getContext("2d");
+const svg = document.getElementById("svgLogo");
+const svgColor = document.getElementById("svgColor");
 
-function hideAll() {
-    png.style.display="none";
-    svg.style.display="none";
-    canvas.style.display="none";
-}
-function showPNG() {
-    hideAll();
-    png.style.display="block";
-}
-function showSVG() {
-    hideAll();
-    svg.style.display="block";
-    updateColors();
-}
-function showCanvas() {
-    hideAll();
-    canvas.style.display="block";
-    drawCanvas();
-}
-function updateColors() {
-    const red=document.getElementById("zunanjost").value;
-    const white=document.getElementById("notranjost").value;
-    const bg=document.getElementById("ozadje").value;
+svg.onclick = () => svgColor.click();
+svgColor.oninput = e => document.getElementById("ytRed").setAttribute("fill", e.target.value);
 
-    document.getElementById("display").style.background = bg;
-    document.getElementById("ytRed").setAttribute("fill", red);
-    document.getElementById("ytWhite").setAttribute("fill", white);
+const canvas = document.getElementById("logoCanvas");
+const ctx = canvas.getContext("2d");
 
-    if (canvas.style.display==="block") {
-        drawCanvas();
-    }
-}
+canvas.onclick = () => document.getElementById("zunanjost").click();
+
 function drawCanvas() {
-    const red=document.getElementById("zunanjost").value;
-    const white=document.getElementById("notranjost").value;
-    const bg=document.getElementById("ozadje").value;
+    const red = document.getElementById("zunanjost").value;
+    const white = document.getElementById("notranjost").value;
 
-    ctx.clearRect(0, 0, 300, 300);
-    ctx.fillStyle=bg;
-    ctx.fillRect(0, 0, 300, 300);
+    ctx.clearRect(0, 0, 120, 90);
 
-    ctx.fillStyle=red;
+    ctx.fillStyle = red;
     ctx.beginPath();
-    ctx.roundRect(40, 80, 220, 140, 30);
+    ctx.roundRect(15, 20, 90, 50, 15);
     ctx.fill();
 
-    ctx.fillStyle=white;
+    ctx.fillStyle = white;
     ctx.beginPath();
-    ctx.moveTo(130, 110);
-    ctx.lineTo(130, 190);
-    ctx.lineTo(190, 150);
+    ctx.moveTo(50, 30);
+    ctx.lineTo(50, 60);
+    ctx.lineTo(75, 45);
     ctx.closePath();
     ctx.fill();
 }
-showPNG();
+
+drawCanvas();
+
+function openVizitka() {
+    document.getElementById("vizitka").style.display = "flex";
+}
+
+function closeVizitka() {
+    document.getElementById("vizitka").style.display = "none";
+}
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
